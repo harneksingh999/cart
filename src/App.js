@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Validation/Header'
-import Login from './Validation/login'
+import Login from './Components/Login/login'
+import {BrowserRouter, Route} from 'react-router-dom';
+import Register from './Components/Register/Register'
 
 
 class App extends Component {
 
   render() {
     return (
+
+      <BrowserRouter>
       <div className="App">
-         <Header/>
-         <Login/>
+        
+         {/* <Login/> */}
+         <Route path ="/" component={Login}exact/>
+         <Route path="/register" component ={Register}/>
+
       </div>
+      </BrowserRouter>
     );
   }
 }
