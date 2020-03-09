@@ -3,6 +3,7 @@ import './App.css';
 import Login from './Components/Login/login'
 import {BrowserRouter, Route} from 'react-router-dom';
 import Register from './Components/Register/Register'
+import Dashboard from './Components/Dashboard/Dashboard'
 
 
 class App extends Component {
@@ -12,11 +13,9 @@ class App extends Component {
 
       <BrowserRouter>
       <div className="App">
-        
-         {/* <Login/> */}
          <Route path ="/" component={Login}exact/>
          <Route path="/register" component ={Register}/>
-
+         <Route path ="/dashboard" component={Dashboard}/>
       </div>
       </BrowserRouter>
     );

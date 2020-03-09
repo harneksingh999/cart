@@ -12,7 +12,9 @@
 }
 
 .main{
-    height: 75vh;
+  
+  position: absolute;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -23,6 +25,7 @@
 
 .wrapper{
     /* margin-left: 10%; */
+    margin-bottom: 350px;
     width: 400px;
     display: flex;
     flex-direction: column;

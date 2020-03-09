@@ -22,7 +22,7 @@
 }
 
 .form{
-    
+    margin-bottom: 200px;
     width: 400px;
     display: flex;
     flex-direction: column;

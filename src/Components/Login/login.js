@@ -2,13 +2,15 @@ import React, { Component } from'react';
 import './login.css';
 
 import {NavLink} from "react-router-dom"
+import { Redirect} from "react-router-dom"
 
 const initialState = {
   email:"",
   password:"",
   emailError:"  ",
   passwordError:"",
-  overallError:""
+  overallError:"",
+  toDashboard:false
 }
 
 class Login extends Component {
@@ -55,24 +57,46 @@ class Login extends Component {
        }
 
        else{
-      
-        console.log(this.state);
-        this.setState(initialState)
-      
-    //  console.log(this.state);
-    //  this.setState(initialState)
+        // console.log(this.state);
+        console.log(localStorage);
+        // localStorage.clear();
+        // this.setState(initialState)
+        
+         for(let i=0;i<localStorage.length;i++){
+             let key = localStorage.key(i);
+             console.log((`${localStorage.getItem(key)}`),"value")
+             console.log(JSON.parse(localStorage.getItem(key)).password,"object")
+             if(this.state.email===key && this.state.password===JSON.parse(localStorage.getItem(key)).password){
+                  //  this.setState({toDashboard:true})
+                  //  console.log(this.state.toDashboard)
+                  console.log("Successful")   
+                 return this.setState({toDashboard:true});
+             }
+             else{
+               console.log("unsuccssful") 
+              //  alert("Not a registered user!! Please Register")
+             }
+         }
+
        }
   }
 
-    render() {
+    render() { 
+      if(this.state.toDashboard===true){
+        // console.log(this.state.toDashboard)
+        return <Redirect to ="/dashboard"/>
+      }
+
+
       return (
-        <div> 
+        
     
             <div className="main">
-              <h1>Login Page</h1>
             <div className="wrapper">
            <form onSubmit={this.handleSubmit}>
 
+           <h1>Login Page</h1>
+                
             <label>Email:</label> 
             <input className="email"
             type="text"
@@ -96,14 +120,12 @@ class Login extends Component {
 
               <button className="btn">Submit </button>
               <div className="nav"><NavLink to ="/register">Register</NavLink></div>
-
                </form>
-
                </div>
                </div>
 
 
-        </div>
+      
       );
     }
   }

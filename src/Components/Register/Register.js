@@ -1,5 +1,6 @@
 import React, { Component } from'react';
 import './Register.css';
+import { Redirect} from "react-router-dom"
 
 
 const initialsState={
@@ -12,7 +13,8 @@ const initialsState={
     lastNameError:"",
     emailIdError:"",
     passwordError:"",
-    birthError:""
+    birthError:"",
+    toMain:false
 }
  
 
@@ -41,7 +43,7 @@ class Register extends Component {
      handelChange=(event)=> {
          this.setState({firstName:event.target.value}, ()=>{
              if(!this.valid(this.state.firstName,this.pattern.pattern_name)){
-                 this.setState({firstNameError:"Minimum 3 characters required"})
+                 this.setState({firstNameError:"First Name should have only Alphabets and have min 3 characters"})
 
              } else{
                  this.setState({firstNameError:""})
@@ -52,7 +54,7 @@ class Register extends Component {
      handelChange1=(event)=> {
         this.setState({lastName:event.target.value}, ()=>{
             if(!this.valid(this.state.lastName,this.pattern.pattern_last)){
-                this.setState({lastNameError:"Minimum 3 characters required"})
+                this.setState({lastNameError:"Last Name should have only Alphabets and have min 3 characters"})
 
             } else{
                 this.setState({lastNameError:""})
@@ -86,7 +88,7 @@ class Register extends Component {
        this.setState({birth:event.target.value})
         var diff = currentDate.getUTCFullYear() - new Date(event.target.value).getUTCFullYear()
 
-        if(diff<18 &&50){
+        if(diff<18 || diff>50){
              this.setState({birthError:"Age should be betweeen 18 and 50 years"})
         }else{
             this.setState({birthError:""})
@@ -107,20 +109,28 @@ class Register extends Component {
             console.log(this.state)
             const key = this.state.emailId;
             localStorage.setItem(key,JSON.stringify(this.state))
+            // localStorage.clear()
             console.log(localStorage)
-            this.setState(initialsState)
-
+            // this.setState(initialsState)
+            this.setState({toMain:true})
+        
         }
        }
 
 
     render(){
 
+        if(this.state.toMain===true){
+            return <Redirect to ="/" />
+
+
+        }
+
         return(
             <div className="main"> 
                 <div className="form">
                     <h1>Registration</h1>
-            <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} >
                 <label>First Name:</label> <input className="name" type="text" name="Name" value={this.state.firstName} onChange={this.handelChange}/><br /><div className="firstname">{this.state.firstNameError}</div>
                  <label>Last Name:</label> <input className="last" type="text" name="Last" value={this.state.lastName} onChange={this.handelChange1}/><br/><div className="lastname">{this.state.lastNameError}</div>
                  <label>Email:</label> <input className="mail" type ="text" name="mail" value={this.state.emailId} onChange={this.handelChange2}/><br/> <div className="email">{this.state.emailIdError}</div>
