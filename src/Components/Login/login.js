@@ -10,7 +10,8 @@ const initialState = {
   emailError:"  ",
   passwordError:"",
   overallError:"",
-  toDashboard:false
+  toDashboard:false,
+  toInventory:false
 }
 
 class Login extends Component {
@@ -33,15 +34,16 @@ class Login extends Component {
     }
     
     handleChange1 =(event)=>{
-      this.setState({password:event.target.value},()=>{
-        if(!this.valid(this.state.password,this.patterns.p)){
+      this.setState({password:event.target.value})
+      //   ,()=>{
+      //   if(!this.valid(this.state.password,this.patterns.p)){
 
-          this.setState({passwordError:"Invalid Password"})
-        }
-        else{
-          this.setState({passwordError:""})
-        }
-      })
+      //     this.setState({passwordError:"Invalid Password"})
+      //   }
+      //   else{
+      //     this.setState({passwordError:""})
+      //   }
+      // })
     }
      valid(field,regex) {
        return regex.test(field)
@@ -57,35 +59,42 @@ class Login extends Component {
        }
 
        else{
-        // console.log(this.state);
         console.log(localStorage);
-        // localStorage.clear();
-        // this.setState(initialState)
-        
          for(let i=0;i<localStorage.length;i++){
              let key = localStorage.key(i);
              console.log((`${localStorage.getItem(key)}`),"value")
              console.log(JSON.parse(localStorage.getItem(key)).password,"object")
-             if(this.state.email===key && this.state.password===JSON.parse(localStorage.getItem(key)).password){
-                  //  this.setState({toDashboard:true})
-                  //  console.log(this.state.toDashboard)
+             if((this.state.email===key && this.state.password===JSON.parse(localStorage.getItem(key)).password)){
+
                   console.log("Successful")   
                  return this.setState({toDashboard:true});
+
+             } 
+             else if( this.state.email==="admin@cart.com"&& this.state.password==="oneofakind"  )
+             {
+                return this.setState({toInventory:true})
              }
              else{
                console.log("unsuccssful") 
-              //  alert("Not a registered user!! Please Register")
+              this.setState({overallError:"Not a registered user!! Please Register"})
+              this.setState({email:"",password:""})
              }
          }
+  
 
        }
   }
 
     render() { 
       if(this.state.toDashboard===true){
-        // console.log(this.state.toDashboard)
-        return <Redirect to ="/dashboard"/>
+        return <Redirect to ="/"/>
       }
+      else if(this.state.toInventory===true){
+        return <Redirect to = "/inventory"/>
+      }
+    
+
+
 
 
       return (
@@ -115,7 +124,7 @@ class Login extends Component {
       />
             <div className="passwordError">{this.state.passwordError}</div>
 
-            {/* <div className="overallError">{this.state.overallError}</div> */}
+            <div className="overallError">{this.state.overallError}</div>
              <br />
 
               <button className="btn">Submit </button>
@@ -133,7 +142,7 @@ class Login extends Component {
 export default Login; 
 
 
-
+// || (this.state.email==="admin@cart.com"&& this.state.password==="oneofakind")
 
 
 

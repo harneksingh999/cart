@@ -63,6 +63,11 @@
     display: relative;
 }
 
+.mail{
+    /* color: red; */
+    font-size: 0.75em;
+    display: relative;
+}
 .email{
     color: red;
     font-size: 0.75em;
@@ -70,7 +75,7 @@
 }
 
 .pwd{
-    color: red;
+    /* color: red; */
     font-size: 0.75em;
     display: relative;
 }

@@ -4,6 +4,7 @@ import Login from './Components/Login/login'
 import {BrowserRouter, Route} from 'react-router-dom';
 import Register from './Components/Register/Register'
 import Dashboard from './Components/Dashboard/Dashboard'
+import Inventory from './Components/Inventory/Inventory'
 
 
 class App extends Component {
@@ -13,9 +14,10 @@ class App extends Component {
 
       <BrowserRouter>
       <div className="App">
-         <Route path ="/" component={Login}exact/>
+         <Route path ="/login" component={Login}/>
          <Route path="/register" component ={Register}/>
-         <Route path ="/dashboard" component={Dashboard}/>
+         <Route path ="/" component={Dashboard} exact/>
+         <Route path ="/inventory" component={Inventory}/>
       </div>
       </BrowserRouter>
     );

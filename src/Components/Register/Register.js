@@ -85,7 +85,7 @@ class Register extends Component {
     }
 
     handelChange4=(event)=>{
-       this.setState({birth:event.target.value})
+       this.setState({bith:event.target.value})
         var diff = currentDate.getUTCFullYear() - new Date(event.target.value).getUTCFullYear()
 
         if(diff<18 || diff>50){
@@ -100,7 +100,7 @@ class Register extends Component {
        handleSubmit= (event)=>{
         event.preventDefault();
 
-        if(this.state.firstName==="" || this.state.firstNameError==="Minimum 3 characters required" || this.state.lastNameError==="Minimum 3 characters required" || this.state.emailIdError==="invalid Email ID " || this.state.passwordError==="invalid Password" || this.state.birthError==="Age should be betweeen 18 and 50 years" || this.state.lastName==="" ||this.state.emailId==="" || this.state.password==="" || this.state.birth===""){
+        if(this.state.firstName==="" || this.state.firstNameError==="Minimum 3 characters required" || this.state.lastNameError==="Minimum 3 characters required" || this.state.emailIdError==="invalid Email ID " || this.state.passwordError==="invalid Password" || this.state.birthError==="Age should be betweeen 18 and 50 years" || this.state.lastName==="" ||this.state.emailId==="" || this.state.password==="" || this.state.bith===""){
             console.log("invalid Form ")
             alert("Please fill all the Required Fields")
         }
@@ -121,7 +121,7 @@ class Register extends Component {
     render(){
 
         if(this.state.toMain===true){
-            return <Redirect to ="/" />
+            return <Redirect to ="/login" />
 
 
         }
@@ -135,7 +135,7 @@ class Register extends Component {
                  <label>Last Name:</label> <input className="last" type="text" name="Last" value={this.state.lastName} onChange={this.handelChange1}/><br/><div className="lastname">{this.state.lastNameError}</div>
                  <label>Email:</label> <input className="mail" type ="text" name="mail" value={this.state.emailId} onChange={this.handelChange2}/><br/> <div className="email">{this.state.emailIdError}</div>
                  <label>Password:</label> <input className="pwd" type ="password" name="pwd" value={this.state.password} onChange={this.handelChange3}/><br/><div className="pwd">{this.state.passwordError}</div>
-                 <label>Date of Birth:</label> <input className="dob" type="date" name="birthday"  onChange={this.handelChange4}/><br/> <div className="date">{this.state.birthError}</div>
+                 <label>Date of Birth:</label> <input className="dob" type="date" name="birthday" onChange={this.handelChange4}/><br/> <div className="date">{this.state.birthError}</div>
                 <input type ="radio" name="gender" value="male"/> <label htmlFor="male">Male</label><br/>
                 <input type ="radio" name="gender" value="female"/> <label htmlFor="female">Female</label><br/>
                 <input type ="radio" name="gender" value="other"/> <label htmlFor="other">Other</label><br/>
