@@ -1,11 +1,9 @@
-import React, { Component } from'react';
-import { Link} from "react-router-dom"
-import Products from './Products'
-import Toolbar from "../Toolbar/Toolbar"
+import React, { Component } from 'react'
+import Toolbar from '../Toolbar/Toolbar'
 import SideDrawer from '../SideDrawer/sideDrawer'
 import Backdrop from "../Backdrop/Backdrop"
-import Footer from "../Footer/Footer"
-class Dashboard extends Component {
+
+class Electronics extends Component {
 
     state={
         sideDrawerOpen:false
@@ -22,7 +20,8 @@ class Dashboard extends Component {
         this.setState({sideDrawerOpen:false})
     }
 
-    render () {
+    render (){
+
         let sideDrawer;
         let backdrop;
 
@@ -31,23 +30,18 @@ class Dashboard extends Component {
             backdrop =  <Backdrop click={this.backdropClickHandler}/>
 
         }
-        return(
-            <div style ={{height:'100%'}}> 
-              <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+        return (
+            <div>
+            <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
               {sideDrawer}
               {backdrop}
-                <Products/>
-                <div className="logout" >
-                    <Link to="/login"><button>Log In</button></Link>
-                </div>
-                <footer>
-                    <Footer/>
-                </footer>
+            <div>
+                List of Electronics item 
+            </div>
             </div>
         )
-
-        
     }
 }
 
-export default Dashboard;
+export default Electronics
+
