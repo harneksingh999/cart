@@ -5,6 +5,7 @@ import Toolbar from "../Toolbar/Toolbar"
 import SideDrawer from '../SideDrawer/sideDrawer'
 import Backdrop from "../Backdrop/Backdrop"
 import Footer from "../Footer/Footer"
+
 class Dashboard extends Component {
 
     state={
@@ -37,9 +38,6 @@ class Dashboard extends Component {
               {sideDrawer}
               {backdrop}
                 <Products/>
-                <div className="logout" >
-                    <Link to="/login"><button>Log In</button></Link>
-                </div>
                 <footer>
                     <Footer/>
                 </footer>

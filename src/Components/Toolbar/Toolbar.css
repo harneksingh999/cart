@@ -19,3 +19,13 @@
 .Toolbar nav {
     height: 100%;
 }
+
+.logout{
+    display: inline-flex;
+   
+}
+.ab{
+    margin-right: 7px;
+}
+
+
