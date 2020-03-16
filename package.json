@@ -10,6 +10,7 @@
     "react-router-dom": "^5.1.2",
     "react-script": "^2.0.5",
     "react-scripts": "1.1.5",
+    "react-slider": "^1.0.3",
     "react-slideshow-image": "^1.4.0"
   },
   "scripts": {

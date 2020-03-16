@@ -35,7 +35,7 @@ header span{
 /* The footer is fixed to the bottom of the page */
  
 footer{
-	position: fixed;
+	position: relative;
 	bottom: 0;
 }
  
@@ -86,6 +86,7 @@ footer{
 	color:  #ffffff;
 	font: normal 36px 'Cookie', cursive;
 	margin: 0;
+	margin-right: 87px;
 }
  
 /* The company logo */

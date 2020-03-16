@@ -113,6 +113,23 @@ class Register extends Component {
             console.log(localStorage)
             // this.setState(initialsState)
             this.setState({toMain:true})
+
+
+            // console.log(this.state)
+
+            // var key = "userdata";
+            // var array =[];
+            // // var e = this.state.emailId;
+            // var s = this.state;
+            //  array.push(s)
+            //  localStorage.setItem(key,JSON.stringify(array))
+            //  console.log(localStorage.getItem(key))
+            //  var x = localStorage.getItem(key)
+            //  var m = JSON.parse(x)
+            //  console.log(m)
+            //  this.setState(initialsState)
+            // // console.log(localStorage)
+            
         
         }
        }

@@ -37,7 +37,9 @@ class Dashboard extends Component {
               <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
               {sideDrawer}
               {backdrop}
-                <Products/>
+              <body>
+              <Products/>
+              </body>
                 <footer>
                     <Footer/>
                 </footer>

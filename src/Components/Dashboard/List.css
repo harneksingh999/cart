@@ -1,10 +1,24 @@
 .list{
     margin: 10px;
     border: 1px solid #eee;
-    box-shadow: 0 2px 2px #ccc;
+    box-shadow: 0 2px 2px #494847;
     width: 300px;
     padding:20px
 }
 .mainlist{
     display: inline-flex;
+}
+ 
+.list1{
+    margin: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px #494847;
+    width: 350px;
+    padding:5px;
+    display: inline-flex;
+}
+
+.offers{
+    padding: 5px;
+    padding-top: 5px;
 }
