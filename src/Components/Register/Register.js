@@ -120,15 +120,42 @@ class Register extends Component {
             // var key = "userdata";
             // var array =[];
             // // var e = this.state.emailId;
+
             // var s = this.state;
             //  array.push(s)
             //  localStorage.setItem(key,JSON.stringify(array))
-            //  console.log(localStorage.getItem(key))
-            //  var x = localStorage.getItem(key)
-            //  var m = JSON.parse(x)
-            //  console.log(m)
+            //  var l = localStorage.userdata
+
+        
+            //  for(let i=0;i<localStorage.length;i++){
+                  
+            //     //    console.log(array[i].emailId)
+            //     //   console.log(JSON.parse(localStorage.getItem(key)))
+            //     //   var z = JSON.parse(localStorage.getItem(key)
+            //     //   console.log(z[0].emailId)
+
+            //     for(let j =0;j<localStorage.userdata.length;j++){
+
+             
+            //     if(array[i].emailId===l[j].emailId)
+            //     { 
+            //       console.log("yess")
+                 
+
+            //       } else{
+
+            //         array.push(this.state)
+            //       }
+
+                
+
+            //  }
+            // }
+            // //  var x = localStorage.getItem(key)
+            // //  var m = JSON.parse(x)
+            // //  console.log(m)
             //  this.setState(initialsState)
-            // // console.log(localStorage)
+            // console.log(localStorage)
             
         
         }

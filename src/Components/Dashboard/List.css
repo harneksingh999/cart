@@ -3,7 +3,8 @@
     border: 1px solid #eee;
     box-shadow: 0 2px 2px #494847;
     width: 300px;
-    padding:20px
+    padding:20px;
+    background-color: tan;
 }
 .mainlist{
     display: inline-flex;
@@ -13,6 +14,7 @@
     margin: 10px;
     border: 1px solid #eee;
     box-shadow: 0 2px 2px #494847;
+    background-color: tan;
     width: 350px;
     padding:5px;
     display: inline-flex;

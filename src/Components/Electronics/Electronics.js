@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import Toolbar from '../Toolbar/Toolbar'
 import SideDrawer from '../SideDrawer/sideDrawer'
 import Backdrop from "../Backdrop/Backdrop"
+import Products from "../Products/Products"
 
 class Electronics extends Component {
 
     state={
-        sideDrawerOpen:false
+        sideDrawerOpen:false,
+        products:[],
+        filteredProducts:[]
     }
      
     drawerToggleClickHandler=()=>{
@@ -19,6 +22,14 @@ class Electronics extends Component {
     backdropClickHandler=()=>{
         this.setState({sideDrawerOpen:false})
     }
+       
+     componentWillMount(){
+         fetch("http://localhost:8000/products/").then(res=>res.json())
+         .then(data=>this.setState({
+             products:data,
+             filteredProducts:data
+         }));
+     }
 
     render (){
 
@@ -36,7 +47,7 @@ class Electronics extends Component {
               {sideDrawer}
               {backdrop}
             <div>
-                List of Electronics item 
+                <Products products={this.state.filteredProducts} handleAddToCart={this.handleAddToCart}/>
             </div>
             </div>
         )

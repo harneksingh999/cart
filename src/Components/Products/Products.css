@@ -1,0 +1,7 @@
+.prodlist{
+    display: inline-flex;
+    padding: 50px;
+}
+.bd{
+    padding: 5px;
+}
