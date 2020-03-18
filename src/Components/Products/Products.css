@@ -1,6 +1,8 @@
 .prodlist{
     display: inline-flex;
-    padding: 50px;
+    padding: 10px;
+    float: left;
+    width: 30%;
 }
 .bd{
     padding: 5px;

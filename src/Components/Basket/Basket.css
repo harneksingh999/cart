@@ -1,0 +1,11 @@
+.message{
+    /* padding: 5px;
+    float: right;
+    width: 30%; */
+
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    padding: 0pc;
+    width: 44%;
+}
