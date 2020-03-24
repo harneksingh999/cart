@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import './Basket.css'
+import Modal from '../Modal/Modal'
 
 class Basket extends Component {
 
     render(){
         const {cartItems}=this.props;
         return(
+        
            <div className="message">
-               {cartItems.length===0?"cart is empty":<div  className="message">you have {cartItems.length}items in the cart</div>}
+               <br></br> {cartItems.length===0?"cart is empty":<div  className="message1"> <br></br>you have {cartItems.length}items in the cart<br></br></div>}
                {cartItems.length>0 &&
-               <div  className="message">
+
+               <div>
+               <div  className="message1"> <br></br>
                   <ul>
                     {cartItems.map(item=>
                         <li>
-                            <b>{item.title}</b>
+                             <b>{item.title}</b>
                             X{item.count}
                         
                             <button onClick={(e)=>this.props.handleRemoveFromCart(e,item)}>X</button>
@@ -22,8 +26,10 @@ class Basket extends Component {
                   </ul>
 
                </div>
+               </div>
                }
            </div>
+    
         )
 
 

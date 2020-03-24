@@ -122,38 +122,57 @@ class Register extends Component {
             // // var e = this.state.emailId;
 
             // var s = this.state;
+
+            // if(array.length===0){
             //  array.push(s)
             //  localStorage.setItem(key,JSON.stringify(array))
-            //  var l = localStorage.userdata
+
+              
+            // }
+
+            
+            // else{
+
+            //  for(let i=0;i<array.length;i++){
+            //     const a= array.map(function(info){
+            //          return info                     
+            //      })
+
+            //      if(a[i]!=this.state.emailId){
+
+            //         array.push({...this.state,index=i+1})
+            //         localStorage.setItem(key,JSON.stringify(array))
+            //      }
+            //      console.log(a[i].emailId)
+            //     }
+            // }
+            // //  var l = localStorage.userdata
 
         
-            //  for(let i=0;i<localStorage.length;i++){
+            // //  for(let i=0;i<localStorage.length;i++){
                   
-            //     //    console.log(array[i].emailId)
-            //     //   console.log(JSON.parse(localStorage.getItem(key)))
-            //     //   var z = JSON.parse(localStorage.getItem(key)
-            //     //   console.log(z[0].emailId)
+            // //     //    console.log(array[i].emailId)
+            // //     //   console.log(JSON.parse(localStorage.getItem(key)))
+            // //     //   var z = JSON.parse(localStorage.getItem(key)
+            // //     //   console.log(z[0].emailId)
 
-            //     for(let j =0;j<localStorage.userdata.length;j++){
+            // //     for(let j =0;j<localStorage.userdata.length;j++){
 
              
-            //     if(array[i].emailId===l[j].emailId)
-            //     { 
-            //       console.log("yess")
+            // //     if(array[i].emailId===l[j].emailId)
+            // //     { 
+            // //       console.log("yess")
                  
 
-            //       } else{
+            // //       } else{
 
-            //         array.push(this.state)
-            //       }
+            // //         array.push(this.state)
+            // //       }
 
                 
 
-            //  }
-            // }
-            // //  var x = localStorage.getItem(key)
-            // //  var m = JSON.parse(x)
-            // //  console.log(m)
+            // //  }
+            // // }
             //  this.setState(initialsState)
             // console.log(localStorage)
             

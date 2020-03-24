@@ -5,7 +5,17 @@
 
     position: absolute;
     top: 30px;
+    right: 75px;
+    padding: 0pc;
+    width: 44%;
+}
+
+
+.message1{
+    position: absolute;
+    top: 50px;
     right: 0px;
     padding: 0pc;
     width: 44%;
+    
 }
