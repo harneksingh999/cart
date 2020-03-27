@@ -11,10 +11,11 @@ class Products extends Component {
                  <img src ={`/products/${product.sku}_2.jpg`} alt={product.title}></img>
                <p>{product.title}</p>
                  </a>  
-                 <b>{product.price}</b>
+                 <b>{product.price}$</b>
             <button className="bd" 
             onClick={(e)=>this.props.handleAddToCart(e,product)}>Add to Cart </button> 
             </div> 
+            
             </div>
                                                     
 

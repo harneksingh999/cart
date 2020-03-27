@@ -26,7 +26,12 @@ class Electronics extends Component {
     }
        
      componentWillMount(){
-         fetch("http://localhost:8000/products/").then(res=>res.json())
+         fetch("http://localhost:8001/products/",{method: 'GET',mode: 'cors', // no-cors, *cors, same-origin
+         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+         headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          }}).then(res=>res.json())
          .then(data=>this.setState({
              products:data,
              filteredProducts:data

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-// import "bootstrap/dist/css/bootstrap.min.css"
 import Login from './Components/Login/login'
 import {BrowserRouter, Route} from 'react-router-dom';
 import Register from './Components/Register/Register'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Inventory from './Components/Inventory/Inventory'
 import Electronics from './Components/Electronics/Electronics';
+import Men from './Components/Men/Men'
 
 
 class App extends Component {
@@ -21,6 +21,7 @@ class App extends Component {
          <Route path ="/" component={Dashboard} exact/>
          <Route path ="/inventory" component={Inventory}/>
          <Route path ="/electronics" component={Electronics}/>
+         <Route path ="/men" component={Men}/>
       </div>
       </BrowserRouter>
     );
