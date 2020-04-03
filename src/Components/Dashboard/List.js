@@ -18,28 +18,28 @@ const prodlist =()=>{
     return( 
     <div className="new">
         <div className="mainlist">
-       <div className="list">
+       <div className="l">
            <div>
                <img src ={mi} width="250px" height="100px"></img>
                <p>MI A3</p>
            </div>
             </div>
 
-            <div className="list">
+            <div className="l">
            <div>
                <img src ={Legion} width="250px" height="100px"></img>
                <p>LENOVO Z50</p>
            </div>
             </div>
 
-            <div className="list">
+            <div className="l">
            <div>
                <img src ={mi1} width="250px" height="100px"></img>
                <p>REDMI A3</p>
            </div>
             </div>
 
-            <div className="list">
+            <div className="l">
            <div>
                <img src ={boat} width="250px" height="100px"></img>
                <p>BOAT ROCKERZ</p>

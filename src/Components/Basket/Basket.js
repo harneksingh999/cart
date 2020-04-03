@@ -1,43 +1,50 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Basket.css'
+import { Link} from "react-router-dom"
 
 
-class Basket extends Component {
-
-    render(){
-        const {cartItems}=this.props;
-        return(
-        
-           <div className="message">
-             {cartItems.length===0?"cart is empty":<div  className="message1">you have {cartItems.length}items in the cart</div>}
-               {cartItems.length>0 &&
-
-               <div>
-               <div  className="message1"> <br></br>
-                  <ul>
-                    {cartItems.map(item=>
-                        <li>
-                             <b>{item.title}</b>&nbsp; &nbsp;
-
-                             <button>+</button>&nbsp;
-                             <button>-</button>&nbsp;
-                            {item.count}
-                        
-                            <button onClick={(e)=>this.props.handleRemoveFromCart(e,item)}>X</button>
-                        </li>)}
-
-                  </ul>
-
-               </div>
-               </div>
-               }
-           </div>
-    
-        )
-
-
-
-    }
+let closebtn={
+    marginBottom:'15px',
+    padding:'3px 8px',
+    cursor:'pointer',
+    borderRadius:'50%',
+    border:'none',
+    width: '30px',
+    height:'30px',
+    alignSelf:'flex-end'
 }
 
-export default Basket;
+ const basket =(props)=>{
+
+    
+ const cartItems=props.cartItems.map(item=>
+    <li>
+         <b>{item.title}</b>&nbsp; &nbsp;
+        {item.count}
+    
+        <button onClick={(e)=>props.handleRemoveFromCart(e,item)}>X</button>
+    </li>)
+
+
+
+        
+        return(
+
+           <div className="list">
+               <button style={closebtn}>X</button>
+               <p>Your Shopping  List </p>
+            <ul>
+               {cartItems}
+           </ul>
+           <p>Continue to shop more </p>
+           <div><Link to ="/men"><button className="cont" onClick={console.log('hey')}>Continue</button></Link></div>
+
+           </div>
+        
+        
+
+        )
+    
+}
+
+export default basket;

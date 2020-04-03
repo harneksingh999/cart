@@ -7,6 +7,7 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import Inventory from './Components/Inventory/Inventory'
 import Electronics from './Components/Electronics/Electronics';
 import Men from './Components/Men/Men'
+import Details from './Components/Details/Details'
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
          <Route path ="/inventory" component={Inventory}/>
          <Route path ="/electronics" component={Electronics}/>
          <Route path ="/men" component={Men}/>
+         <Route path ="/details" component={Details}/>
       </div>
       </BrowserRouter>
     );

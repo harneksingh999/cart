@@ -1,21 +1,16 @@
-.message{
-    /* padding: 5px;
-    float: right;
-    width: 30%; */
+.list{
+    position: fixed;
+    background-color:#eee;
+    width: 50%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 15%;
+    top: 30%;
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
 
-    position: absolute;
-    top: 30px;
-    right: 75px;
-    padding: 0pc;
-    width: 44%;
 }
-
-
-.message1{
-    position: absolute;
-    top: 50px;
-    right: 0px;
-    padding: 0pc;
-    width: 44%;
-    
-}
+ 

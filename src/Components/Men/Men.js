@@ -1,14 +1,18 @@
-import React, { Component } from 'react'
+ import React, { Component } from 'react'
 import Products from "../Products/Products"
 import Basket from '../Basket/Basket'
 import Toolbar from '../Toolbar/Toolbar'
+import Modal from '../Modal/Modal'
 
 class Men extends Component{
     state={
         products:[],
         filteredProducts:[],
-        cartItems:[]
+        cartItems:[],
+        isopen:false
     }
+
+
 
     componentWillMount(){
         fetch("http://localhost:8001/products/").then(res=>res.json())
@@ -16,6 +20,19 @@ class Men extends Component{
             products:data,
             filteredProducts:data
         }));
+    }
+
+    // getitem =(id)=>{
+    //     const prod= this.state.products.find(item =>item.id===id);
+    //     return prod;
+    // }
+
+    isopen=() =>{
+        this.setState({isopen:true})
+    }
+
+    isclosed=()=>{
+        this.setState({isopen:false})
     }
 
     handleRemoveFromCart=(e,item)=>{
@@ -52,9 +69,13 @@ class Men extends Component{
         return(
 
             <div>
-                <Toolbar/>
+                <Toolbar clicked={this.isopen}/>
+                <Modal show={this.state.isopen} modalClosed={this.isclosed}>
+                    <div> 
+                    <Basket  cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart}/>
+                    </div>   
+                </Modal>
                  <Products products={this.state.filteredProducts} handleAddToCart={this.handleAddToCart}/>
-                 <Basket  cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart}  />
             </div>
         )
     }
