@@ -5,9 +5,11 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Register from './Components/Register/Register'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Inventory from './Components/Inventory/Inventory'
-import Electronics from './Components/Electronics/Electronics';
 import Men from './Components/Men/Men'
+import Phones from './Components/Phones/Phones'
 import Details from './Components/Details/Details'
+import Cart from './Components/Cart/Cart'
+
 
 
 class App extends Component {
@@ -21,9 +23,11 @@ class App extends Component {
          <Route path="/register" component ={Register}/>
          <Route path ="/" component={Dashboard} exact/>
          <Route path ="/inventory" component={Inventory}/>
-         <Route path ="/electronics" component={Electronics}/>
          <Route path ="/men" component={Men}/>
+         <Route path ="/phones" component={Phones}/>
          <Route path ="/details" component={Details}/>
+         <Route path ="/cart" component={Cart}/>
+         
       </div>
       </BrowserRouter>
     );

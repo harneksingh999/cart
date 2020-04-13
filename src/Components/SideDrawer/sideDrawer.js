@@ -8,7 +8,7 @@ const sideDrawer = props =>(
          <nav className="side-drawer">
           <ul>
            <li><a href ='/men'> Men's Clothing</a></li>
-           <li><a href ='/watches'>Watches</a></li>
+           <li><a href ='/phones'>Smart Phones</a></li>
            <li><a href ='/sports'>Sports Utility</a></li>
     
 

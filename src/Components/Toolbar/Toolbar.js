@@ -15,7 +15,8 @@ const toolbar = props =>(
  <div><img src={logo} width="80px" height="100px" ></img></div>
  <div className="logout" >
  <div className="ab">
-   <button onClick={ props.clicked}>&#128722;</button>
+   {/* <button onClick={ props.clicked}>&#128722;</button> */}
+  <Link to ="/cart"><button>&#128722;</button></Link>
    </div>
            <div><Link to="/login"><button>
              Log In

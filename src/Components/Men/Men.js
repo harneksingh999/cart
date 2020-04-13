@@ -3,6 +3,9 @@ import Products from "../Products/Products"
 import Basket from '../Basket/Basket'
 import Toolbar from '../Toolbar/Toolbar'
 import Modal from '../Modal/Modal'
+import Backdrop from '../Backdrop/Backdrop'
+
+
 
 class Men extends Component{
     state={
@@ -22,16 +25,11 @@ class Men extends Component{
         }));
     }
 
-    // getitem =(id)=>{
-    //     const prod= this.state.products.find(item =>item.id===id);
-    //     return prod;
-    // }
-
     isopen=() =>{
         this.setState({isopen:true})
     }
 
-    isclosed=()=>{
+    backdropClickHandler=()=>{
         this.setState({isopen:false})
     }
 
@@ -66,15 +64,34 @@ class Men extends Component{
 
     }
     render(){
+
+        // let backdrop;
+        // let modal ;
+        // if(this.state.isopen){
+        //     modal =  <Modal show={this.state.isopen} modalClosed={this.isclosed}>
+    
+        //     <div> 
+        //     <Basket  cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart}/>
+        //     </div>   
+        // </Modal>
+        // backdrop=<Backdrop click={this.backdropClickHandler}/>
+
+        // }
         return(
 
             <div>
                 <Toolbar clicked={this.isopen}/>
-                <Modal show={this.state.isopen} modalClosed={this.isclosed}>
+                <Basket  cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart}/>                
+                 {/* {backdrop}
+            {modal} */}
+                
+                {/* <Modal show={this.state.isopen} modalClosed={this.isclosed}>
+    
                     <div> 
                     <Basket  cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart}/>
                     </div>   
-                </Modal>
+                </Modal> */}
+            
                  <Products products={this.state.filteredProducts} handleAddToCart={this.handleAddToCart}/>
             </div>
         )
